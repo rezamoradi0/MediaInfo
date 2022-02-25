@@ -15,6 +15,10 @@ namespace MediaInfo
         public int MovieFileLength { get; set; }
         public float MovieSize { get; set; }
 
-        public SubtitleFile Subtitle { get; set; }
+        public List<SubtitleFile> Subtitles { get; set; }
+        public MovieFile() { 
+        Subtitles = new List<SubtitleFile>();
+
+        }
     }
 }

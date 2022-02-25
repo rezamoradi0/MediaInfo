@@ -10,6 +10,10 @@ namespace MediaInfo
 
     {
         public string SubtitlePath { get; set; }
-
+        public string Languge { get; set; }
+        public string Format { get; set; }
+  
+    
+    
     }
 }

@@ -11,8 +11,9 @@ namespace MediaInfo
         public static string RunCMD(string Command, string RunPath)
         {
 
-            ;
 
+           // Console.WriteLine(Command); Console.WriteLine(RunPath);
+          //  Console.ReadLine(); 
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
             cmd.StartInfo.RedirectStandardInput = true;

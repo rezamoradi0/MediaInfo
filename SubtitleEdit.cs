@@ -24,7 +24,7 @@ namespace MediaInfo
             {
                 AddSubToMovieFile(Result,listOFMovies);
             }
-            Console.ReadLine();
+            
             return false;
         }
         static void AddSubToMovieFile(string SubtitleEditRes, List<MovieFile> Movies) {

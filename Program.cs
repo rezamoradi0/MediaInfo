@@ -11,7 +11,39 @@ namespace MediaInfo
         static void Main(string[] args)
         {
 
+          //  Console.InputEncoding = System.Text.Encoding.UTF8;
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
 
+            List<MovieFile> files = new List<MovieFile>();
+            MovieFile movie = new MovieFile();
+            MovieFile.MovieFolder = @"G:\SubtitleBotPlugins\TestRoom\";
+            movie.MovieName = "Arcane.S01E01.720p.10bit.WEB-DL.x265.SoftSub.DigiMoviez.per.mkv";
+            files.Add(movie);
+            SubtitleEdit.SubRipBatch(files);
+            DeltaSubtitle deltaSubtitle = new DeltaSubtitle();
+            foreach (var Movie in files)
+            {
+                foreach (var sub in Movie.Subtitles)
+                {
+                    deltaSubtitle.Subtitle(sub);
+                } 
+            }
+
+            foreach (var Movie in files)
+            {
+                foreach (var sub in Movie.Subtitles)
+                {
+                    if (sub.Languge=="per")
+                    {
+                        Console.WriteLine(sub.SubtitlePath);
+                    }
+                 
+                   
+                }
+            }
+            Console.ReadLine(); 
+            /*
+             * استخراج زیرنویس ها و اختصاص به فیلم خود
             List<MovieFile> files = new List<MovieFile>();
             MovieFile movie0 = new MovieFile();
             MovieFile movie1 = new MovieFile();
@@ -31,7 +63,7 @@ namespace MediaInfo
             }
             Console.ReadLine();
 
-
+            */
             // SQLiteConnection sqlCon=SqlSide.CreateConnection();
 
             // ساخت دیتابیس و وارد کردن زیرنویس ها و اسم فیلم ها  به دیتابیس

@@ -70,6 +70,7 @@
     <Compile Include="CMD.cs" />
     <Compile Include="DeltaSubtitle.cs" />
     <Compile Include="MediaInformation.cs" />
+    <Compile Include="MkvMerage.cs" />
     <Compile Include="MovieFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

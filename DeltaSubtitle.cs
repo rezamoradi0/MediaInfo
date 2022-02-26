@@ -142,6 +142,7 @@ namespace MediaInfo
                 SubtitleName = SubtitleName.Replace(".mkv", "-MetaLMovieS.mkv");
 
             }
+            SubtitleName = SubtitleName.Replace(".srt.", ".srt");
             return SubtitleName;
         }
         /// <summary>
@@ -172,89 +173,89 @@ namespace MediaInfo
         }
         static string[] WordToReplace(string Line) {
             string output1 = Line;
-            output1 = output1.Replace("کافیست 1 بار از سایت ما دانلود کنید مطمعن باشید کاربر همیشگی ما میشوید", "با ما هم آهنگ فیلم ببینید ! متال موویز");
-            output1 = output1.Replace("::. ارائه شده توسط وبسايت موبوفيلم .::", "دانلود شده از وبسایت متال موویز");
+            output1 = output1.Replace("کافیست 1 بار از سایت ما دانلود کنید مطمعن باشید کاربر همیشگی ما میشوید", "با ما هم آهنگ فیلم ببینید ! دلتا موویز");
+            output1 = output1.Replace("::. ارائه شده توسط وبسايت موبوفيلم .::", "دانلود شده از وبسایت دلتا موویز");
             output1 = output1.Replace("WwW.MoboMovie.net", "MetalMovieS");
-            output1 = output1.Replace("مرجع دانلود فيلم و سريال با لينک مستقيم", "دانلود فیلم و سریال با زیرنویس چسبیده از متال موویز");
-            output1 = output1.Replace("موبوفيلم", "متال موویز");
-            output1 = output1.Replace("موبو فيلم", "متال موویز");
-            output1 = output1.Replace("MoboMovie.net", "MetaLMovieS");
-            output1 = output1.Replace("MoboMovie.pw", "MetalMovieS");
-            output1 = output1.Replace("MoboMovie.xyz", "MetalMovieS");
-            output1 = output1.Replace("MoboMovie.com", "MetalMovieS");
-            output1 = output1.Replace("MOBOMOVIE.NET", "MetalMovieS");
-            output1 = output1.Replace("MoboMovie.info", "MetalMovieS");
-            output1 = output1.Replace("MOBOMOVIES", "MetalMovieS");
-            output1 = output1.Replace("MOBOMOVIE", "MetalMovieS");
-            output1 = output1.Replace("MOBOFILMS", "MetalMovieS");
-            output1 = output1.Replace("MOBOMOVIES", "MetalMovieS");
-            output1 = output1.Replace("Mobomovie", "MetalMovieS");
-            output1 = output1.Replace("mobomovie", "MetalMovieS");
-            output1 = output1.Replace(" اولين سايت زيرنويس چسبيده در ايران ايده اي نو را تجربه کنيد", "دانلود رایگان فیلم و سریال با زیرنویس فارسی چسبیده از اپیکیشن نوار - @Navar_App");
-            output1 = output1.Replace("اولين سايت زيرنويس چسبيده در ايران ايده اي نو را تجربه کنيد", "دانلود رایگان فیلم و سریال با زیرنویس فارسی چسبیده از اپیکیشن نوار - @Navar_App");
-            output1 = output1.Replace("اولین سایت زیرنویس چسبیده در ایران ایده ای نو را تجربه کنید", "دانلود رایگان فیلم و سریال با زیرنویس فارسی چسبیده از اپیکیشن نوار - @Navar_App");
-            output1 = output1.Replace("موبو فیلم", "متال موویز");
-            output1 = output1.Replace("موبو", "متال");
+            output1 = output1.Replace("مرجع دانلود فيلم و سريال با لينک مستقيم", "دانلود فیلم و سریال با زیرنویس چسبیده از دلتا موویز");
+            output1 = output1.Replace("موبوفيلم", "دلتا موویز");
+            output1 = output1.Replace("موبو فيلم", "دلتا موویز");
+            output1 = output1.Replace("MoboMovie.net", "DeltaMovieS");
+            output1 = output1.Replace("MoboMovie.pw", "DeltaMovieS");
+            output1 = output1.Replace("MoboMovie.xyz", "DeltaMovieS");
+            output1 = output1.Replace("MoboMovie.com", "DeltaMovieS");
+            output1 = output1.Replace("MOBOMOVIE.NET", "DeltaMovieS");
+            output1 = output1.Replace("MoboMovie.info", "DeltaMovieS");
+            output1 = output1.Replace("MOBOMOVIES", "DeltaMovieS");
+            output1 = output1.Replace("MOBOMOVIE", "DeltaMovieS");
+            output1 = output1.Replace("MOBOFILMS", "DeltaMovieS");
+            output1 = output1.Replace("MOBOMOVIES", "DeltaMovieS");
+            output1 = output1.Replace("Mobomovie", "DeltaMovieS");
+            output1 = output1.Replace("mobomovie", "DeltaMovieS");
+            output1 = output1.Replace(" اولين سايت زيرنويس چسبيده در ايران ايده اي نو را تجربه کنيد", "دانلود رایگان فیلم و سریال با زیرنویس فارسی چسبیده از اپیکیشن دلتاموویز - @DeltaMovieS");
+            output1 = output1.Replace("اولين سايت زيرنويس چسبيده در ايران ايده اي نو را تجربه کنيد", "دانلود رایگان فیلم و سریال با زیرنویس فارسی چسبیده از اپیکیشن دلتاموویز - @DeltaMovieS");
+            output1 = output1.Replace("اولین سایت زیرنویس چسبیده در ایران ایده ای نو را تجربه کنید", "دانلود رایگان فیلم و سریال با زیرنویس فارسی چسبیده از اپیکیشن دلتاموویز - @DeltaMovieS");
+            output1 = output1.Replace("موبو فیلم", "دلتا موویز");
+            output1 = output1.Replace("موبو", "دلتا");
 
 
 
 
 
-            output1 = output1.Replace("Download: MovieApp", "MetaLMovieS");
-            output1 = output1.Replace("Free On Google Playe", "Www.MetaLMovieS");
-            output1 = output1.Replace("MovieApp.Apk", "متال موویز");
-            output1 = output1.Replace("@#Movie_Apk ما", "WwW.MetaLMovieS");
-            output1 = output1.Replace("@#Movie_Apk", "@MetaLMovieS / #MetaLMovieS");
-            output1 = output1.Replace("DeltaMovieS", "MetaLMovieS");
-            output1 = output1.Replace("@#DeltaMovieS", "@MetaLMovieS");
+            output1 = output1.Replace("Download: MovieApp", "DeltaMovieS");
+            output1 = output1.Replace("Free On Google Playe", "Www.DeltaMovieS");
+            output1 = output1.Replace("MovieApp.Apk", "دلتا موویز");
+            output1 = output1.Replace("@#Movie_Apk ما", "WwW.DeltaMovieS");
+            output1 = output1.Replace("@#Movie_Apk", "@DeltaMovieS / #DeltaMovieS");
+            output1 = output1.Replace("MetaLMovieS", "DeltaMovieS");
+            output1 = output1.Replace("@#MetaLMovieS", "@DeltaMovieS");
             output1 = output1.Replace("Delta", "Metal");
-            output1 = output1.Replace("دیجی", "متال");
-            output1 = output1.Replace("دلتا", "متال");
-            output1 = output1.Replace("متالموویز", "متال موویز");
-            output1 = output1.Replace("MetaL-Movies", "MetaLMovieS");
-            output1 = output1.Replace("MetaL-MovieS", "MetaLMovieS");
+            output1 = output1.Replace("دیجی", "دلتا");
+            output1 = output1.Replace("متال", "دلتا");
+            output1 = output1.Replace("متالموویز", "ذلتا موویز");
+            output1 = output1.Replace("MetaL-Movies", "DeltaMovieS");
+            output1 = output1.Replace("MetaL-MovieS", "DeltaMovieS");
             output1 = output1.Replace("اپیکیشن", "وبسایت");
 
-            output1 = output1.Replace("@#MovieApp", "WwW.MetaLMovieS");
-            output1 = output1.Replace("@#Movie_App", "WwW.MetaLMovieS");
-            output1 = output1.Replace("@MovieApp", "WwW.MetaLMovieS");
-            output1 = output1.Replace("#MovieApp", "WwW.MetaLMovieS");
+            output1 = output1.Replace("@#MovieApp", "WwW.DeltaMovieS");
+            output1 = output1.Replace("@#Movie_App", "WwW.DeltaMovieS");
+            output1 = output1.Replace("@MovieApp", "WwW.DeltaMovieS");
+            output1 = output1.Replace("#MovieApp", "WwW.DeltaMovieS");
 
-            output1 = output1.Replace("@#Movie_Apk ما", "WwW.MetaLMovieS");
-            output1 = output1.Replace("@#Movie_Apk", "@MetaLMovieS / #MetaLMovieS");
+            output1 = output1.Replace("@#Movie_Apk ما", "WwW.DeltaMovieS");
+            output1 = output1.Replace("@#Movie_Apk", "@DeltaMovieS / #DeltaMovieS");
 
-            Regex.Replace(output1, "mobomovies", "MetaLMovieS", RegexOptions.IgnoreCase);
-            Regex.Replace(output1, "mobomovie", "MetaLMovieS", RegexOptions.IgnoreCase);
+            Regex.Replace(output1, "mobomovies", "DeltaMovieS", RegexOptions.IgnoreCase);
+            Regex.Replace(output1, "mobomovie", "DeltaMovieS", RegexOptions.IgnoreCase);
 
-            output1 = output1.Replace(".::WWW.MetalMovieS::.", "•• WwW.MetaLMovieS ••");
+            output1 = output1.Replace(".::WWW.MetalMovieS::.", "•• WwW.DeltaMovieS ••");
 
-            output1 = output1.Replace(".::WWW.MetalMovieS::.", "@Navar_Apk | اپیکیشن نوار");
+            output1 = output1.Replace(".::WWW.MetalMovieS::.", "DeltaMovieS |  دلتاموویز");
 
             output1 = output1.Replace("   .:: ارائه شده توسط وب سايت ديجي موويز ::.", "ارائه شده توسط دلتا موویز");
-            output1 = output1.Replace("•• WwW.MetaLMovieS ••", "@Navar_Apk | اپیکیشن نوار");
-            output1 = output1.Replace("MetaLMovieS", "@Navar_Apk | اپیکیشن نوار");
-            output1 = output1.Replace("متال موویز", "@Navar_Apk | اپیکیشن نوار");
+            output1 = output1.Replace("•• WwW.MetaLMovieS ••", "@DeltaMovieS | دلتاموویز");
+            output1 = output1.Replace("MetaLMovieS", "DeltaMovieS | دلتاموویز");
+            output1 = output1.Replace("متال موویز", "DeltaMovieS | دلتاموویز");
             output1 = output1.Replace("ديجي", "دلتا");
             output1 = output1.Replace("DIGIMOVIEZ", "DeltaMovieS");
             output1 = output1.Replace("DIGIMOVIES", "DeltaMovieS");
-            output1 = Regex.Replace(output1, @"DigiMoviez.Com", "MetalMovies | DeltaMovieS", RegexOptions.IgnoreCase);
-            output1 = Regex.Replace(output1, @"DigiMoviez.Co", "MetalMovies | DeltaMovieS", RegexOptions.IgnoreCase);
+            output1 = Regex.Replace(output1, @"DigiMoviez.Com", "دلتاموویز | DeltaMovieS", RegexOptions.IgnoreCase);
+            output1 = Regex.Replace(output1, @"DigiMoviez.Co", "دلتاموویز | DeltaMovieS", RegexOptions.IgnoreCase);
 
 
             //top movies
 
-            output1 = Regex.Replace(output1, "WwW.TopMoviez.net", "MetalMovies | DeltaMovieS", RegexOptions.IgnoreCase);
-            output1 = Regex.Replace(output1, "TopMoviez", "MetalMovies | DeltaMovieS", RegexOptions.IgnoreCase);
-            output1 = Regex.Replace(output1, "TopMovies", "MetalMovies | DeltaMovieS", RegexOptions.IgnoreCase);
-            output1 = Regex.Replace(output1, "TopMovie", "MetalMovies | DeltaMovieS", RegexOptions.IgnoreCase);
-            output1 = Regex.Replace(output1, "topmovieznet", "MetalMovies | DeltaMovieS", RegexOptions.IgnoreCase);
+            output1 = Regex.Replace(output1, "WwW.TopMoviez.net", "دلتاموویز | DeltaMovieS", RegexOptions.IgnoreCase);
+            output1 = Regex.Replace(output1, "TopMoviez", "دلتاموویز | DeltaMovieS", RegexOptions.IgnoreCase);
+            output1 = Regex.Replace(output1, "TopMovies", "دلتاموویز | DeltaMovieS", RegexOptions.IgnoreCase);
+            output1 = Regex.Replace(output1, "TopMovie", "دلتاموویز | DeltaMovieS", RegexOptions.IgnoreCase);
+            output1 = Regex.Replace(output1, "topmovieznet", "دلتاموویز | DeltaMovieS", RegexOptions.IgnoreCase);
 
-            output1 = Regex.Replace(output1, "تاپ مُویز", "متال مُویز | دلتا مُویز", RegexOptions.IgnoreCase);
-            output1 = Regex.Replace(output1, "تاپ مویز", "متال مُویز | دلتا مُویز", RegexOptions.IgnoreCase);
-            output1 = Regex.Replace(output1, "تاپ موویز", "متال مُویز | دلتا مُویز", RegexOptions.IgnoreCase);
-            output1 = Regex.Replace(output1, "تاپ مُویز", "متال مُویز | دلتا مُویز", RegexOptions.IgnoreCase);
-            output1 = Regex.Replace(output1, "تاپ مووی", "متال مُویز | دلتا مُویز", RegexOptions.IgnoreCase);
-            output1 = Regex.Replace(output1, "تاپ مُوی", "متال مُویز | دلتا مُویز", RegexOptions.IgnoreCase);
+            output1 = Regex.Replace(output1, "تاپ مُویز", "DeltaMovieS | دلتا مُویز", RegexOptions.IgnoreCase);
+            output1 = Regex.Replace(output1, "تاپ مویز", "DeltaMovieS | دلتا مُویز", RegexOptions.IgnoreCase);
+            output1 = Regex.Replace(output1, "تاپ موویز", "DeltaMovieS | دلتا مُویز", RegexOptions.IgnoreCase);
+            output1 = Regex.Replace(output1, "تاپ مُویز", "DeltaMovieS | دلتا مُویز", RegexOptions.IgnoreCase);
+            output1 = Regex.Replace(output1, "تاپ مووی", "DeltaMovieS | دلتا مُویز", RegexOptions.IgnoreCase);
+            output1 = Regex.Replace(output1, "تاپ مُوی", "DeltaMovieS | دلتا مُویز", RegexOptions.IgnoreCase);
 
 
             try
@@ -283,6 +284,9 @@ namespace MediaInfo
 
               
             }
+
+            output1 = output1.Replace("MetalMovies", "DeltaMovieS");
+
             string[] outPutArray = output1.Split('~');
             return outPutArray;
 

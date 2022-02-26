@@ -11,13 +11,31 @@ namespace MediaInfo
         static void Main(string[] args)
         {
 
+            MovieFile movie = new MovieFile();
+            MovieFile.MovieFolder = @"G:\SubtitleBotPlugins\TestRoom\";
+            movie.MovieName = "Arcane.S01E01.720p.10bit.WEB-DL.x265.SoftSub.DigiMoviez.mkv";
+
+            SubtitleFile subtitle = new SubtitleFile();
+            subtitle.SubtitlePath = @"G:\SubtitleBotPlugins\TestRoom\1.srt";
+            subtitle.Languge = "per";
+            subtitle.Format = "srt";
+            movie.Subtitles.Add(subtitle);
+
+            Console.WriteLine(movie.SoftSobMovie());
+            Console.ReadLine();
+
+
+
+
+
+            /*دستورات استخراج زیرنویس بود
           //  Console.InputEncoding = System.Text.Encoding.UTF8;
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             List<MovieFile> files = new List<MovieFile>();
             MovieFile movie = new MovieFile();
             MovieFile.MovieFolder = @"G:\SubtitleBotPlugins\TestRoom\";
-            movie.MovieName = "Arcane.S01E01.720p.10bit.WEB-DL.x265.SoftSub.DigiMoviez.per.mkv";
+            movie.MovieName = "Arcane.S01E01.720p.10bit.WEB-DL.x265.SoftSub.DigiMoviez.mkv";
             files.Add(movie);
             SubtitleEdit.SubRipBatch(files);
             DeltaSubtitle deltaSubtitle = new DeltaSubtitle();
@@ -42,6 +60,8 @@ namespace MediaInfo
                 }
             }
             Console.ReadLine(); 
+            */
+
             /*
              * استخراج زیرنویس ها و اختصاص به فیلم خود
             List<MovieFile> files = new List<MovieFile>();

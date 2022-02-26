@@ -13,10 +13,10 @@ namespace MediaInfo
 
             MovieFile movie = new MovieFile();
             MovieFile.MovieFolder = @"G:\SubtitleBotPlugins\TestRoom\";
-            movie.MovieName = "Arcane.S01E01.720p.10bit.WEB-DL.x265.SoftSub.DigiMoviez.mkv";
+            movie.MovieName = "Arcane.S01E02.720p.10bit.WEB-DL.x265.SoftSub.DigiMoviez.mkv";
 
             SubtitleFile subtitle = new SubtitleFile();
-            subtitle.SubtitlePath = @"G:\SubtitleBotPlugins\TestRoom\1.srt";
+            subtitle.SubtitlePath = @"G:\SubtitleBotPlugins\TestRoom\Scream.2022.720p.WEBRip.800MB.x264-GalaxyRG-Copy.DeltaMovieS.srt";
             subtitle.Languge = "per";
             subtitle.Format = "srt";
             movie.Subtitles.Add(subtitle);

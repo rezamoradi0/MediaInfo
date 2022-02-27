@@ -10,7 +10,19 @@ namespace MediaInfo
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            DeltaSubtitle DS = new DeltaSubtitle();
 
+            List<MovieFile> files = new List<MovieFile>();
+            files= ImportMovies.GetMovies();
+            SubtitleEdit.SubRipBatch(files);
+            DS.SubtitleDeltaBatch(files);
+            MediaInformation.GetDurationBatch(files);
+            files.SoftSobMovieBatch();
+            files.InsertMovieBatch();
+            
+            /*
+             * تست ام کی مریج بود
             MovieFile movie = new MovieFile();
             MovieFile.MovieFolder = @"G:\SubtitleBotPlugins\TestRoom\";
             movie.MovieName = "Arcane.S01E02.720p.10bit.WEB-DL.x265.SoftSub.DigiMoviez.mkv";
@@ -26,7 +38,7 @@ namespace MediaInfo
 
 
 
-
+           */
 
             /*دستورات استخراج زیرنویس بود
           //  Console.InputEncoding = System.Text.Encoding.UTF8;

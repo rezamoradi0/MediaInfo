@@ -26,8 +26,32 @@ namespace MediaInfo
             }
             return sqlite_conn;
         }
+        public static bool InsertMovieBatch(this List<MovieFile> Movies)
+        {
 
-       public static void CreateTable(SQLiteConnection conn)
+            foreach (var Movie in Movies)
+            {
+                Movie.InsertMovie();
+            }
+            return true;
+                    
+        }
+            public static bool InsertMovie(this MovieFile Movie)
+        {
+            SQLiteConnection sqlCon = SqlSide.CreateConnection();
+            
+            string insertCmd = "INSERT INTO Subtitle  (Duration, MovieName, SubtitlePath, MovieYear) VALUES(DURATION, 'MOVIENAME' , 'SUBTITLEPATH',2013)";
+            insertCmd = insertCmd.Replace("DURATION", Movie.MovieFileLength.ToString());
+            insertCmd = insertCmd.Replace("MOVIENAME", Movie.MovieName);
+            insertCmd = insertCmd.Replace("SUBTITLEPATH", Movie.GetBestSubtitle().SubtitlePath);
+
+            SqlSide.InsertData(sqlCon, insertCmd);
+            sqlCon.Close();
+            return true;
+
+
+        }
+        public static void CreateTable(SQLiteConnection conn)
         {
 
             SQLiteCommand sqlite_cmd;

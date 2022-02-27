@@ -14,6 +14,18 @@ namespace MediaInfo
 
         const string DeltaSubPath = @"G:\SubtitleBotPlugins\DeltaSub.srt";
 
+        public  bool SubtitleDeltaBatch(List<MovieFile> Movies)
+        {
+            foreach (var Movie in Movies)
+            {
+               
+               string result= Subtitle(Movie.GetBestSubtitle());
+                
+            }
+            return true;
+        }
+
+
         /// <summary>
         /// زیرنویس را به این متد بدید و زیرنویس به صورت خودکار تغییر میکنه 
         /// </summary>

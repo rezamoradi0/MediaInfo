@@ -25,7 +25,7 @@ namespace MediaInfo
                 AddSubToMovieFile(Result,listOFMovies);
             }
             
-            return false;
+            return true;
         }
         static void AddSubToMovieFile(string SubtitleEditRes, List<MovieFile> Movies) {
             SubtitleEditRes = SubtitleEditRes.Replace("\r\n", "*");

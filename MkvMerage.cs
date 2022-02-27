@@ -14,8 +14,18 @@ namespace MediaInfo
         static string CoverFullPath = "G:\\SubtitleBotPlugins\\cover.jpg";
         static string MkvMerageFolder = @"G:\SubtitleBotPlugins\mkvtoolnix";
         static string MKVCommandTxt = @"G:\SubtitleBotPlugins\MKVCMD.txt";
-             
-        public static bool SoftSobMovie(this MovieFile movie)
+
+        public static bool SoftSobMovieBatch(this List<MovieFile> Movies)
+        {
+            foreach (var movie in Movies)
+            {
+                movie.SoftSobMovie();
+            }
+            return true;
+        }
+
+
+    public static bool SoftSobMovie(this MovieFile movie)
         {
             //  string OutPut_Path= movie.CreateOutPutPath()+ movie.GetBestSubtitle().GetNameOfSubtitle().Replace(".srt",".mkv");
             string OutPut_Path = movie.CreateOutPutPath();
@@ -51,7 +61,7 @@ namespace MediaInfo
             Command = Command.Replace("COVERPATHANDNAME", CoverFullPath);
 
             Console.WriteLine(Command);
-            Console.ReadLine();
+           // Console.ReadLine();
             return Command;
         }
     }

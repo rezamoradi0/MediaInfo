@@ -18,10 +18,11 @@ namespace MediaInfo
         public float MovieSize { get; set; }
 
         public List<SubtitleFile> Subtitles { get; set; }
+        public SubtitleFile ChosedSubtitle=new SubtitleFile();
         public MovieFile() { 
         Subtitles = new List<SubtitleFile>();
            OutPutMovieFolder= "G:\\SubtitleBotPlugins\\OutPutFolder\\";
-            MovieFolder = @"G:\SubtitleBotPlugins\TestRoom\";
+            MovieFolder = @"G:\SubtitleBotPlugins\OriginalMovies\";
 
 
         }
@@ -133,6 +134,7 @@ namespace MediaInfo
                     if (Sub.Format==".srt"&&Sub.Languge=="per")
                     {
                         subtitleFile=Sub;
+                        ChosedSubtitle = Sub;
                         return Sub;
                         break;
                     }else if (Sub.Format == ".srt" && Sub.Languge != "eng")
@@ -140,6 +142,7 @@ namespace MediaInfo
                         if (subtitleFile.Languge!= "per")
                         {
                             subtitleFile = Sub;
+                            ChosedSubtitle = Sub;
                             return Sub;
                             break;
                         }
@@ -147,6 +150,7 @@ namespace MediaInfo
                     }
 
                 }
+                ChosedSubtitle = subtitleFile;
                 return subtitleFile;
 
             }

@@ -20,6 +20,17 @@ namespace MediaInfo
     static class MediaInformation
     {
         public static string MediaInfoPath =@"G:\SubtitleBotPlugins\MediaInfo.Windows.x64";
+
+
+
+
+        public static bool GetDurationBatch(List<MovieFile> Movies) {
+            foreach (var item in Movies)
+            {
+                item.MovieFileLength = GetDuration(item);
+            }
+        return true;
+        }
         public static int GetDuration(MovieFile _movieFile) {
             
             

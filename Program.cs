@@ -14,11 +14,13 @@ namespace MediaInfo
             DeltaSubtitle DS = new DeltaSubtitle();
 
             List<MovieFile> files = new List<MovieFile>();
-            files= ImportMovies.GetMovies();
+            files= FielsWorks.GetMovies();
             SubtitleEdit.SubRipBatch(files);
             DS.SubtitleDeltaBatch(files);
             MediaInformation.GetDurationBatch(files);
             files.SoftSobMovieBatch();
+            files.MoveSubtitlesBatch();
+
             files.InsertMovieBatch();
             
             /*

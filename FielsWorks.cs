@@ -7,7 +7,7 @@ using System.IO;
 
 namespace MediaInfo
 {
-    internal class ImportMovies
+  public  static class FielsWorks
     {
      
         
@@ -28,7 +28,23 @@ namespace MediaInfo
          return movies;
 
         }
+        public static bool MoveSubtitlesBatch(this List<MovieFile> Movies) {
 
+            foreach (var Movie in Movies)
+            {
+                Movie.MoveSubtitle();
+            }
+        return true;
 
+        }
+      public  static bool MoveSubtitle(this MovieFile movie) {
+            string SubPath = movie.GetBestSubtitle().SubtitlePath;
+            string SubSavePath = MovieFile.SubtitleSaveFolder + movie.GetBestSubtitle().GetNameOfSubtitle();
+
+            File.Move(SubPath, SubSavePath);
+            movie.GetBestSubtitle().SubtitlePath = SubSavePath;
+            return true;
+
+        }
     }
 }

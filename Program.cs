@@ -8,8 +8,37 @@ namespace MediaInfo
 {
     internal class Program
     {
+        public static void Job() {
+            DownloadManager.InProgress = true;
+
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            DeltaSubtitle DS = new DeltaSubtitle();
+
+            List<MovieFile> files = new List<MovieFile>();
+            files = FielsWorks.GetMovies();
+            SubtitleEdit.SubRipBatch(files);
+            DS.SubtitleDeltaBatch(files);
+            MediaInformation.GetDurationBatch(files);
+            files.SoftSobMovieBatch();
+            files.MoveSubtitlesBatch();
+
+            files.InsertMovieBatch();
+
+            FielsWorks.DeleteAllFiles();
+            DownloadManager.InProgress = false;
+
+        }
         static void Main(string[] args)
         {
+            
+          List<Link> links = new List<Link>();
+            links = DownloadManager.GetLinksFromText();
+            bool test = links.AddToQueu();
+
+            Console.WriteLine(test);
+
+            /*
+             * پردازش کامل افلاین 
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             DeltaSubtitle DS = new DeltaSubtitle();
 
@@ -22,7 +51,7 @@ namespace MediaInfo
             files.MoveSubtitlesBatch();
 
             files.InsertMovieBatch();
-            
+            */
             /*
              * تست ام کی مریج بود
             MovieFile movie = new MovieFile();

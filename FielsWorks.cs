@@ -40,10 +40,32 @@ namespace MediaInfo
       public  static bool MoveSubtitle(this MovieFile movie) {
             string SubPath = movie.GetBestSubtitle().SubtitlePath;
             string SubSavePath = MovieFile.SubtitleSaveFolder + movie.GetBestSubtitle().GetNameOfSubtitle();
+            try
+            {
+                File.Move(SubPath, SubSavePath);
+            }
+            catch (Exception)
+            {
 
-            File.Move(SubPath, SubSavePath);
+                File.Move(SubPath, SubSavePath.Replace(".srt",".copy.srt"));
+            }
+
             movie.GetBestSubtitle().SubtitlePath = SubSavePath;
             return true;
+
+        }
+
+        public static void DeleteAllFiles() {
+            DirectoryInfo di = new DirectoryInfo(MovieFile.MovieFolder);
+
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo dir in di.GetDirectories())
+            {
+                dir.Delete(true);
+            }
 
         }
     }

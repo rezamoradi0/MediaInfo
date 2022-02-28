@@ -69,7 +69,9 @@
   <ItemGroup>
     <Compile Include="CMD.cs" />
     <Compile Include="DeltaSubtitle.cs" />
+    <Compile Include="DownloadManager.cs" />
     <Compile Include="FielsWorks.cs" />
+    <Compile Include="Link.cs" />
     <Compile Include="MediaInformation.cs" />
     <Compile Include="MkvMerage.cs" />
     <Compile Include="MovieFile.cs" />

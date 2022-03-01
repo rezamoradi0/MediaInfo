@@ -80,6 +80,7 @@
     <Compile Include="SqlSide.cs" />
     <Compile Include="SubtitleEdit.cs" />
     <Compile Include="SubtitleFile.cs" />
+    <Compile Include="UploadManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

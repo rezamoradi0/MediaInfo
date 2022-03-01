@@ -40,7 +40,7 @@ namespace MediaInfo
         {
             SQLiteConnection sqlCon = SqlSide.CreateConnection();
             
-            string insertCmd = "INSERT INTO Subtitle  (Duration, MovieName, SubtitlePath, MovieYear, FileType, Seasion, Episode, MovieFullName) VALUES(DURATION, 'MOVIENAME' , 'SUBTITLEPATH',YEAR ,'FILETYPE' ,'SEASION' ,'EPISODE' ,'MOVIEFULLNAME')";
+            string insertCmd = "INSERT INTO Subtitle  (Duration, MovieName, SubtitlePath, MovieYear, FileType, Seasion, Episode, MovieFullName, UploadPath) VALUES(DURATION, 'MOVIENAME' , 'SUBTITLEPATH',YEAR ,'FILETYPE' ,'SEASION' ,'EPISODE' ,'MOVIEFULLNAME' ,'UPLOADPATH')";
             insertCmd = insertCmd.Replace("DURATION", Movie.MovieFileLength.ToString());
             insertCmd = insertCmd.Replace("MOVIENAME", Movie.MovieNameOrginal());
             insertCmd = insertCmd.Replace("SUBTITLEPATH", Movie.GetBestSubtitle().SubtitlePath);
@@ -49,7 +49,8 @@ namespace MediaInfo
             insertCmd = insertCmd.Replace("FILETYPE", Movie.GetFileType());
             insertCmd = insertCmd.Replace("SEASION", Convert.ToInt32(Movie.GetSeasionNumber()).ToString());
             insertCmd = insertCmd.Replace("EPISODE", Movie.GetEpisodeNumber());
-
+            insertCmd = insertCmd.Replace("UPLOADPATH", Movie.MovieUploadPath);
+            
             SqlSide.InsertData(sqlCon, insertCmd);
             sqlCon.Close();
             return true;

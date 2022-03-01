@@ -18,6 +18,9 @@ namespace MediaInfo
         public int MovieFileLength { get; set; }
         public float MovieSize { get; set; }
 
+        public string MovieUploadPath { get; set; }
+
+
         public string FileType = "unknow";
         public string MovieYear = "0";
         public List<SubtitleFile> Subtitles { get; set; }
@@ -260,6 +263,21 @@ namespace MediaInfo
                 return seasionNumber;
             }
             return "MovieFile";
+        }
+        public string GetQuality() {
+
+            string Quality = "";
+            if (MovieName.ToLower().Contains("720x265") || MovieName.ToLower().Contains("720px265") || MovieName.ToLower().Contains("x265") && MovieName.ToLower().Contains("720p") || MovieName.ToLower().Contains("hevc") && MovieName.ToLower().Contains("720p"))
+                Quality = "720x265";
+            else if (MovieName.ToLower().Contains("1080x265") || MovieName.ToLower().Contains("1080x265") || MovieName.ToLower().Contains("x265") && MovieName.ToLower().Contains("1080p") || MovieName.ToLower().Contains("hevc") && MovieName.ToLower().Contains("1080p"))
+                Quality = "1080x265";
+            else if (MovieName.ToLower().Contains("720p"))
+                Quality = "720p";
+            else if (MovieName.ToLower().Contains("480p"))
+                Quality = "480p";
+            else if (MovieName.ToLower().Contains("1080p"))
+                Quality = "1080p";
+            return Quality;
         }
         public string GetEpisodeNumber() {
             if (GetFileType() == "Serial")

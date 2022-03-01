@@ -21,7 +21,7 @@ namespace MediaInfo
             MediaInformation.GetDurationBatch(files);
             files.SoftSobMovieBatch();
             files.MoveSubtitlesBatch();
-
+            files.CreateUploadBatch();
             files.InsertMovieBatch();
 
             FielsWorks.DeleteAllFiles();
@@ -29,13 +29,41 @@ namespace MediaInfo
 
         }
         static void Main(string[] args)
+
         {
-            
+            List<Link> links = new List<Link>();
+            links = DownloadManager.GetLinksFromText();
+            bool test = links.AddToQueu();
+
+            Console.WriteLine(test);
+
+
+
+            /*
+            MovieFile movie = new MovieFile();
+            MovieFile.MovieFolder = @"G:\SubtitleBotPlugins\OutPutFolder\";
+            movie.MovieName = "Arcane.S01E03.720p.10bit.WEB-DL.x265.Sub.-003-.DeltaMovieS.mkv";
+            UploadManager.CreateUpload(movie); 
+            Console.ReadLine();
+
+            */
+
+
+
+            /*
+             * تمامی کار ها بجز اپلود تکمیل شده
           List<Link> links = new List<Link>();
             links = DownloadManager.GetLinksFromText();
             bool test = links.AddToQueu();
 
             Console.WriteLine(test);
+            */
+
+
+
+
+
+
 
             /*
              * پردازش کامل افلاین 
